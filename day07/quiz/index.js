@@ -8001,9 +8001,24 @@ const data = [
   },
 ];
 
-//1.
+//1. 여성이면서 영어를 쓰는 사람들만 콘솔로 나타내기
+const quiz1 = data.filter(
+  (x) => x.gender == "Female" && x.langauge == "English"
+);
+window.console.log(quiz1);
 
-const quiz1 = data.filter((x) => (x.gender == "Female" && x.language == "english"));
+//2. 부서가 Engineering 또는 Human Resources 아닌 사람들만 나타내기
+const quiz2 = data.filter(
+  (x) => x.department != "Engineering" || x.department != "Human Resources"
+);
+window.console.log(quiz2);
 
-//2.
-const quiz2 = data.filter((x) => x.department ! = "engineering" || x.department ! = "human resources")
+//3. 부서가 Training 또는 Accounting 인 사람들 중에서
+// 풀네임을 이름만 나타나도록 수정해서 콘솔로 보여주기
+const quiz3 = data
+  .filter((x) => x.department == "Training" || x.department == "Accounting")
+  .map((x) => {
+    x.fullname = x.fullname.split(" ")[0];
+    return x;
+  });
+window.console.log(quiz3);
