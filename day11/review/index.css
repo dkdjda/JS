@@ -1,0 +1,25 @@
+section {
+  display: flex;
+  flex-direction: column;
+}
+.main {
+  display: grid;
+  display: flex;
+  grid-template-columns: repeat(1, 1fr);
+  flex-direction: row;
+}
+
+.main > img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  padding: 40px;
+}
+
+.info > button {
+  width: 60px;
+  height: 20px;
+  background-color: white;
+  border: 1px solid blue;
+  color: blue;
+}
